@@ -6,6 +6,14 @@ generator client {
 }
 
 datasource db {
-  provider = env("DATABASE_PROVIDER"),
+  provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model Test {
+  uniqueKey Int      @id @default(autoincrement())
+  string    String
+  int       Int
+  date      DateTime
+  boolean   Boolean
 }
